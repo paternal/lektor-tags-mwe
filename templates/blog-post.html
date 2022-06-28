@@ -5,16 +5,13 @@
 <nav>
 {% if this.tags %}
   <ul>
-    {% for t in this.tags -%}
-      <li>
-        <a href="{{ ('/@/' ~ t)|url }}">
-          All posts tagged {{ t }}
-        </a>
-        <a href="{{ ('/' ~ t)|url }}">
-          All posts tagged {{ t }}
-        </a>
-      </li>
-    {% endfor %}
+      {% for t in this.tags %}
+        <li>
+          <a href="{{ ('/' ~ t.lower())|url }}">
+            All posts tagged {{ t }}
+          </a>
+        </li>
+      {% endfor %}
   </ul>
 {% endif %}
 </nav>
