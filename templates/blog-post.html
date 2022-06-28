@@ -7,7 +7,10 @@
   <ul>
     {% for t in this.tags -%}
       <li>
-        <a href="{{ ('/blog@tag/' ~ t)|url }}">
+        <a href="{{ ('/@/' ~ t)|url }}">
+          All posts tagged {{ t }}
+        </a>
+        <a href="{{ ('/' ~ t)|url }}">
           All posts tagged {{ t }}
         </a>
       </li>
