@@ -2,5 +2,18 @@
 {% from "macros/blog.html" import render_blog_post %}
 {% block title %}{{ this.title }}{% endblock %}
 {% block body %}
+<nav>
+{% if this.tags %}
+  <ul>
+    {% for t in this.tags -%}
+      <li>
+        <a href="{{ ('/blog@tag/' ~ t)|url }}">
+          All posts tagged {{ t }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</nav>
   {{ render_blog_post(this) }}
 {% endblock %}

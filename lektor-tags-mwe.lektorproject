@@ -1,2 +1,5 @@
 [project]
 name = Minimum Working Example for lektor-tags
+
+[packages]
+lektor-tags = 0.5.0
